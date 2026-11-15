@@ -18,5 +18,5 @@ jobs:
         run: npx cap sync ios
       - name: Build iOS Archive
         run: |
-          cd ios/App
-          xcodebuild -workspace App.xcworkspace -scheme App -configuration Release -destination "generic/platform=iOS" -derivedDataPath build archive -archivePath build/App.xcarchive CODE_SIGN_IDENTITY="" CODE_SIGNING_REQUIRED=NO CODE_SIGNING_ALLOWED=NO
+          cd ios
+          xcodebuild -workspace App/App.xcworkspace -scheme App -configuration Release -destination "generic/platform=iOS" -derivedDataPath build archive -archivePath build/App.xcarchive CODE_SIGN_IDENTITY="" CODE_SIGNING_REQUIRED=NO CODE_SIGNING_ALLOWED=NO
