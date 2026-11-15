@@ -14,9 +14,9 @@ jobs:
           node-version: 18
       - name: Install dependencies
         run: npm install
-      - name: Build web assets
+      - name: Sync Capacitor iOS
         run: npx cap sync ios
-      - name: Build iOS App (Archive)
+      - name: Build iOS Archive
         run: |
           cd ios/App
-          xcodebuild -workspace App.xcworkspace -scheme App -configuration Release -sdk iphonesimulator -derivedDataPath build archive -archivePath build/App.xcarchive CODE_SIGN_IDENTITY="" CODE_SIGNING_REQUIRED=NO CODE_SIGNING_ALLOWED=NO
+          xcodebuild -workspace App.xcworkspace -scheme App -configuration Release -destination "generic/platform=iOS" -derivedDataPath build archive -archivePath build/App.xcarchive CODE_SIGN_IDENTITY="" CODE_SIGNING_REQUIRED=NO CODE_SIGNING_ALLOWED=NO
